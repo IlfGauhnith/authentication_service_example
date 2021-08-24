@@ -14,7 +14,7 @@ public class UserBusiness {
     private UserDAO userDAO;
 
     public UserBusiness() {
-        userDAO = new UserDAO();
+        userDAO = UserDAO.getInstance();
     }
 
     public void create(String userName, String password) throws SQLIntegrityConstraintViolationException {

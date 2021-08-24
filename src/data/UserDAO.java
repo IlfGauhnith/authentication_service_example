@@ -1,20 +1,28 @@
 package data;
 
 import model.User;
-
 import java.sql.*;
-import java.util.ArrayList;
-import java.util.List;
-import java.util.Map;
 
 public class UserDAO {
 
     private Connection dbConnection;
     private String sqlQuery;
+    private static UserDAO instance;
 
-    public UserDAO() {
-        Map connectionTypeMap;
+    private UserDAO() {
         this.dbConnection = DBConnectionFactory.getConnection();
+    }
+
+    public static UserDAO getInstance() {
+        if (instance == null) {
+            synchronized (UserDAO.class) {
+                if (instance == null) {
+                    instance = new UserDAO();
+                }
+            }
+        }
+
+        return instance;
     }
 
     public void insert(User user) {
