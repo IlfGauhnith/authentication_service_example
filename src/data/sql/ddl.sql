@@ -6,4 +6,3 @@ CREATE TABLE IF NOT EXISTS usuario (
     ultimo_acesso TIMESTAMPTZ,
     PRIMARY KEY (usuario)
  );
-
