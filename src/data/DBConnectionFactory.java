@@ -8,7 +8,7 @@ public class DBConnectionFactory {
 
     private static String url = "jdbc:postgresql://localhost:5432/login";
 
-    private final static String user = "root";
+    private final static String user = "loginadmin";
     private final static String password = "root";
     private static Connection connection;
 
